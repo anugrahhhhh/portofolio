@@ -1,13 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useRef, useState, CSSProperties } from 'react';
 
 interface MagneticButtonProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
-  style?: any;
+  style?: CSSProperties;
 }
 
 export default function MagneticButton({ children, className = "", onClick, style = {} }: MagneticButtonProps) {
