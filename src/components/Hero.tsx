@@ -1,12 +1,12 @@
 'use client';
 
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Download, Send } from 'lucide-react';
 
 import TextReveal from './TextReveal';
 import MagneticButton from './MagneticButton';
 
-const container: Variants = {
+const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -17,7 +17,7 @@ const container: Variants = {
   }
 };
 
-const item: Variants = {
+const item = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
