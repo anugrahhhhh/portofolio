@@ -57,12 +57,12 @@ export default function Skills() {
         <TextReveal>Skills & <span>Analytics</span></TextReveal>
       </motion.h2>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'start' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'start' }}>
         {/* Code Analytics Card */}
         <motion.div 
           style={{ 
             background: 'var(--text-main)', 
-            padding: '4rem', 
+            padding: 'clamp(2rem, 5vw, 4rem)', 
             borderRadius: '4px',
             color: 'var(--bg)',
             boxShadow: '0 40px 80px rgba(0,0,0,0.15)',
@@ -113,7 +113,7 @@ export default function Skills() {
             <h3 style={{ fontFamily: 'var(--serif)', fontSize: '1.8rem', fontWeight: 500 }}>Technical Stack</h3>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '1.2rem' }}>
             {skillGroups.map((skill, idx) => (
               <motion.div 
                 key={skill.name}
@@ -121,13 +121,13 @@ export default function Skills() {
                 transition={{ duration: 0.6, delay: idx * 0.05 }}
                 style={{ 
                   background: 'var(--bg-card)', 
-                  padding: '3rem 1rem', 
+                  padding: '2rem 1rem', 
                   border: '1px solid var(--border)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '1.5rem',
+                  gap: '1.2rem',
                   transition: 'all 0.4s var(--ease)',
                   borderRadius: '4px'
                 }}
@@ -137,7 +137,7 @@ export default function Skills() {
                   borderColor: 'var(--gold-light)'
                 }}
               >
-                <div style={{ width: '45px', height: '45px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '40px', height: '40px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Image 
                     src={skill.logo} 
                     alt={skill.name} 
@@ -147,7 +147,7 @@ export default function Skills() {
                     }} 
                   />
                 </div>
-                <span style={{ fontSize: '0.65rem', fontFamily: 'var(--mono)', letterSpacing: '0.2em', fontWeight: 700, color: 'var(--text-main)', textAlign: 'center' }}>
+                <span style={{ fontSize: '0.6rem', fontFamily: 'var(--mono)', letterSpacing: '0.1em', fontWeight: 700, color: 'var(--text-main)', textAlign: 'center' }}>
                   {skill.name}
                 </span>
               </motion.div>

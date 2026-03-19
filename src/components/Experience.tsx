@@ -55,7 +55,7 @@ export default function Experience() {
         <TextReveal>Experience & <span>Education</span></TextReveal>
       </motion.h2>
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '6rem' }}>
+      <div className="experience-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '6rem' }}>
         <div>
           <h3 style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', marginBottom: '4rem', fontWeight: 300 }}>Experience</h3>
           <div className="timeline">

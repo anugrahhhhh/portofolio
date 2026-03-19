@@ -1,6 +1,5 @@
 'use client';
 
-import CustomCursor from '@/components/CustomCursor';
 import BackgroundDecor from '@/components/BackgroundDecor';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -15,7 +14,6 @@ import Footer from '@/components/Footer';
 export default function Portfolio() {
   return (
     <>
-      <CustomCursor />
       <BackgroundDecor />
       <Navbar />
       <main>

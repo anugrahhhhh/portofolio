@@ -69,17 +69,26 @@ export default function Hero() {
         </motion.p>
         
         <motion.div className="hero-btns" variants={item}>
-          <MagneticButton className="btn-primary" onClick={() => scrollTo('projects')}>
+          <MagneticButton 
+            className="btn-primary" 
+            onClick={() => scrollTo('projects')}
+            aria-label="View my project portfolio"
+          >
             View Portfolio
           </MagneticButton>
           
-          <MagneticButton className="btn-secondary" onClick={() => window.open('/cv-anugrah.pdf')}>
+          <MagneticButton 
+            className="btn-secondary" 
+            onClick={() => window.open('/cv-anugrah.pdf')}
+            aria-label="Download my CV in PDF format"
+          >
             Download CV <Download size={18} />
           </MagneticButton>
           
           <MagneticButton 
             className="btn-secondary"
             onClick={() => window.open('https://wa.me/6287815386696', '_blank')}
+            aria-label="Contact me on WhatsApp"
             style={{ 
               color: 'var(--gold)', 
               borderColor: 'var(--gold-glow)',

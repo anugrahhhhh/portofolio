@@ -119,18 +119,21 @@ export default function Certificates() {
         <TextReveal>Major <span>Certificates</span></TextReveal>
       </motion.h2>
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
         <AnimatePresence mode="popLayout">
           {currentCerts.map((cert) => (
             <motion.div 
               key={cert.id} 
               style={{ 
                 background: 'var(--bg-card)', 
-                padding: '4rem 3.5rem', 
+                padding: 'clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem)', 
                 border: '1px solid var(--border)', 
                 position: 'relative',
                 transition: 'all 0.5s var(--ease)',
-                borderRadius: '2px'
+                borderRadius: '2px',
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
               }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -157,6 +160,8 @@ export default function Certificates() {
             <button
               key={number}
               onClick={() => paginate(number)}
+              aria-label={`Halaman sertifikat ${number}`}
+              aria-current={currentPage === number ? 'page' : undefined}
               style={{
                 background: 'none',
                 border: 'none',
@@ -188,6 +193,7 @@ export default function Certificates() {
           {currentPage < totalPages && (
             <button
               onClick={() => paginate(currentPage + 1)}
+              aria-label="Halaman sertifikat selanjutnya"
               style={{
                 background: 'none',
                 border: 'none',

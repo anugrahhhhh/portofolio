@@ -170,7 +170,7 @@ export default function Projects() {
         <TextReveal>Selected <span>Work</span></TextReveal>
       </motion.h2>
       
-      <div className="projects-grid">
+      <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
         <AnimatePresence mode="popLayout">
           {currentProjects.map((proj) => (
             <motion.div 
@@ -184,6 +184,7 @@ export default function Projects() {
                 transition: { duration: 0.4, ease: "easeOut" }
               }}
               transition={{ duration: 0.4 }}
+              style={{ display: 'flex', flexDirection: 'column', height: '100%' }}
               layout
             >
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginBottom: '1.5rem' }}>
@@ -193,14 +194,14 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <h3 className="project-title">{proj.title}</h3>
+              <h3 className="project-title" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>{proj.title}</h3>
               <p style={{ color: 'var(--text-sub)', fontSize: '0.9rem', marginBottom: '2.5rem', lineHeight: 1.7 }}>{proj.desc}</p>
               <div style={{ display: 'flex', gap: '2rem', marginTop: 'auto' }}>
-                <a href={proj.github} target="_blank" rel="noopener noreferrer" className="nav-cta" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', border: 'none', padding: 0, fontSize: '0.75rem' }}>
+                <a href={proj.github} target="_blank" rel="noopener noreferrer" className="nav-cta" aria-label={`Lihat kode sumber ${proj.title} di GitHub`} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', border: 'none', padding: 0, fontSize: '0.75rem' }}>
                   SOURCE <ArrowUpRight size={16} />
                 </a>
                 {proj.demo && (
-                  <a href={proj.demo} target="_blank" rel="noopener noreferrer" className="nav-cta" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', border: 'none', padding: 0, color: 'var(--gold)', fontSize: '0.75rem' }}>
+                  <a href={proj.demo} target="_blank" rel="noopener noreferrer" className="nav-cta" aria-label={`Lihat demo langsung ${proj.title}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', border: 'none', padding: 0, color: 'var(--gold)', fontSize: '0.75rem' }}>
                     LIVE <ArrowUpRight size={16} />
                   </a>
                 )}
@@ -216,6 +217,8 @@ export default function Projects() {
             <button
               key={number}
               onClick={() => paginate(number)}
+              aria-label={`Halaman ${number}`}
+              aria-current={currentPage === number ? 'page' : undefined}
               style={{
                 background: 'none',
                 border: 'none',
@@ -247,6 +250,7 @@ export default function Projects() {
           {currentPage < totalPages && (
             <button
               onClick={() => paginate(currentPage + 1)}
+              aria-label="Halaman selanjutnya"
               style={{
                 background: 'none',
                 border: 'none',

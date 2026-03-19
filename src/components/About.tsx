@@ -20,18 +20,18 @@ export default function About() {
         <TextReveal>Dedicated to <span>Excellence</span></TextReveal>
       </motion.h2>
       
-      <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '6rem' }}>
+      <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
         <motion.div {...fadeInUp}>
-          <p style={{ fontSize: '1.25rem', lineHeight: 1.8, marginBottom: '2rem', fontWeight: 300 }}>
+          <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.25rem)', lineHeight: 1.8, marginBottom: '2rem', fontWeight: 300 }}>
             I am an enthusiastic informatics graduate with a <span style={{ color: 'var(--gold)' }}>GPA of 3.76/4.00</span> from Universitas Negeri Padang. 
           </p>
           <p style={{ color: 'var(--text-sub)', lineHeight: 2, marginBottom: '3rem' }}>
             My expertise spans across Website Design, Mobile Application Development, and Data Analysis. I am constantly looking for opportunities to leverage my technical skills in Laravel, Flutter, and React to build impactful digital solutions.
           </p>
           
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '2rem' }}>
             <div>
-              <h4 style={{ fontFamily: 'var(--mono)', fontSize: '0.7rem', color: 'var(--gold)', marginBottom: '1rem', textTransform: 'uppercase' }}>Programming</h4>
+              <h4 style={{ fontFamily: 'var(--mono)', fontSize: '0.85rem', color: 'var(--gold)', marginBottom: '1rem', textTransform: 'uppercase' }}>Programming</h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {['PHP', 'JavaScript', 'Python', 'Java', 'C++', 'Flutter', 'React', 'NextJS'].map((s) => (
                   <span key={s} style={{ fontSize: '0.8rem', color: 'var(--text-sub)' }}>{s} •</span>
@@ -39,7 +39,7 @@ export default function About() {
               </div>
             </div>
             <div>
-              <h4 style={{ fontFamily: 'var(--mono)', fontSize: '0.7rem', color: 'var(--gold)', marginBottom: '1rem', textTransform: 'uppercase' }}>Tools & DB</h4>
+              <h4 style={{ fontFamily: 'var(--mono)', fontSize: '0.85rem', color: 'var(--gold)', marginBottom: '1rem', textTransform: 'uppercase' }}>Tools & DB</h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {['Figma', 'Android Studio', 'Docker', 'MySQL', 'Oracle', 'Firebase'].map((s) => (
                   <span key={s} style={{ fontSize: '0.8rem', color: 'var(--text-sub)' }}>{s} •</span>
@@ -49,7 +49,7 @@ export default function About() {
           </div>
         </motion.div>
         
-        <motion.div className="skills-card" style={{ background: 'var(--bg-card)', padding: '3.5rem', border: '1px solid var(--border)', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }} {...fadeInUp}>
+        <motion.div className="skills-card" style={{ background: 'var(--bg-card)', padding: 'clamp(2rem, 5vw, 3.5rem)', border: '1px solid var(--border)', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }} {...fadeInUp}>
           <div style={{ marginBottom: '3rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', marginBottom: '1.5rem' }}>
               <div style={{ background: 'var(--gold-glow)', padding: '0.8rem', borderRadius: '4px' }}>
